@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factguide — Global Mobility Index & Relocation Guides for Young Professionals</title>
+    <title>Factguide — Relocation Guides & Global Mobility Index</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
@@ -19,12 +19,13 @@
                     },
                     colors: {
                         brand: {
-                            50: '#FAF9F6', // Soft Warm Alabaster
-                            100: '#F2EFE9', // Stone Grey
-                            500: '#1C1917', // Slate Obsidian
-                            600: '#44403C', // Warm Charcoal
-                            800: '#78716C', // Neutral Sand
-                            accent: '#C5A880', // Premium Muted Gold
+                            50: '#FDFBF7',   // Silk White (Very light warm cream)
+                            100: '#F5F2EB',  // Pure Linen
+                            200: '#EAE5D9',  // Sandstone Accent
+                            900: '#111827',  // Deep Slate Charcoal (Highly readable)
+                            accent: '#B25A38', // Elegant Burnt Terracotta
+                            accentHover: '#8F3F24',
+                            muted: '#4B5563',  // Slate Gray for clear body text
                         }
                     }
                 }
@@ -35,47 +36,41 @@
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            color: #1C1917;
-            background-color: #FAF9F6;
+            color: #111827;
+            background-color: #FDFBF7;
             overflow-x: hidden;
         }
         h1, h2, h3, .serif-italic { 
             font-family: 'Playfair Display', serif; 
         }
         
-        /* Smooth, subtle custom scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #FAF9F6;
+            background: #FDFBF7;
         }
         ::-webkit-scrollbar-thumb {
-            background: #D6D3D1;
+            background: #EAE5D9;
             border-radius: 8px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #A8A29E;
+            background: #C8BFAC;
         }
 
-        /* Glassmorphism navigation matching the clean look in image_a5b6a1.jpg */
+        /* Nav Glassmorphism Matching image_a5b6a1.jpg */
         .glass-nav {
-            background: rgba(250, 249, 246, 0.9);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(17, 24, 39, 0.06);
         }
 
-        /* Hero Image styled gradient overlay matching high-end travel journals */
+        /* Hero Image Layout Style from image_a5b6a1.jpg */
         .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(250,249,246,0.2) 0%, rgba(250,249,246,0.7) 60%, rgba(250,249,246,1) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop');
+            background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.3) 0%, rgba(253, 251, 247, 0.8) 60%, rgba(253, 251, 247, 1) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
-            background-position: center 35%;
-        }
-
-        /* Smooth transit setups */
-        .search-transition {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background-position: center 30%;
         }
 
         .no-scrollbar::-webkit-scrollbar {
@@ -92,396 +87,389 @@
     <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-5">
         <div class="container mx-auto px-4 md:px-8 lg:px-12 flex justify-between items-center">
             
-            <!-- Authentic Logotype (Stripped of icons as requested) -->
-            <a href="#home" class="text-2xl font-bold tracking-tight text-brand-500 transition-opacity hover:opacity-80">
+            <!-- Authentic Logotype -->
+            <a href="#home" class="text-2xl font-bold tracking-tight text-brand-900 transition-opacity hover:opacity-80">
                 Factguide<span class="text-brand-accent font-serif italic">.</span>
             </a>
 
             <!-- Desktop Nav Menu -->
-            <nav class="hidden lg:flex items-center gap-8 xl:gap-10 font-medium text-[11px] tracking-wider uppercase text-brand-600">
+            <nav class="hidden lg:flex items-center gap-8 xl:gap-10 font-semibold text-[12px] tracking-wider uppercase text-brand-muted">
                 <a href="#home" class="hover:text-brand-accent transition-colors duration-200">Home</a>
                 
                 <!-- Mega Dropdown Country Hub Toggle -->
-                <div class="group static lg:relative">
-                    <button class="flex items-center gap-1 hover:text-brand-accent transition-colors duration-200 py-2">
-                        Countries <i class="fa-solid fa-chevron-down text-[8px] ml-0.5"></i>
+                <div class="group static">
+                    <button class="flex items-center gap-1.5 hover:text-brand-accent transition-colors duration-200 py-2">
+                        Countries <i class="fa-solid fa-chevron-down text-[8px] transition-transform group-hover:rotate-180"></i>
                     </button>
                     <!-- Mega Menu Container -->
-                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[90vw] max-w-[1020px] bg-white rounded-2xl shadow-xl border border-stone-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[95vw] max-w-[1140px] bg-white rounded-2xl shadow-xl border border-brand-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
                         <div class="p-8">
-                            <div class="flex justify-between items-center mb-4 pb-2 border-b border-stone-100">
-                                <h3 class="text-xs font-bold text-stone-400 uppercase tracking-widest">Global Relocation Index</h3>
-                                <span class="text-stone-400 text-[11px] lowercase italic font-serif">select any nation to track live visa updates & resident checks</span>
+                            <div class="flex justify-between items-center mb-6 pb-3 border-b border-brand-100">
+                                <h3 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Global Relocation Hubs</h3>
+                                <span class="text-brand-muted text-[11px] lowercase italic font-serif">select a destination to track updated rules & resident requirements</span>
                             </div>
                             
-                            <!-- 55 countries arranged cleanly into a 4-column responsive grid -->
-                            <div class="grid grid-cols-4 gap-y-2.5 gap-x-4 text-xs font-normal normal-case text-stone-700 max-h-[340px] overflow-y-auto pr-2 no-scrollbar">
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇬🇧</span> United Kingdom</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇦🇺</span> Australia</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇨🇦</span> Canada</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇺🇸</span> United States</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇩🇪</span> Germany</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇮🇪</span> Ireland</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇦🇪</span> United Arab Emirates</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇸🇦</span> Saudi Arabia</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇹🇭</span> Thailand</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇲🇾</span> Malaysia</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇦🇿</span> Azerbaijan</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇹🇷</span> Turkey</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇻🇳</span> Vietnam</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇶🇦</span> Qatar</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇴🇲</span> Oman</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇧🇭</span> Bahrain</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇰🇼</span> Kuwait</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇲🇻</span> Maldives</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇱🇰</span> Sri Lanka</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇪🇬</span> Egypt</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇮🇹</span> Italy</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇫🇷</span> France</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇪🇸</span> Spain</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇵🇹</span> Portugal</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇭🇺</span> Hungary</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇵🇱</span> Poland</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇫🇮</span> Finland</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇳🇴</span> Norway</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇸🇪</span> Sweden</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇳🇱</span> Netherlands</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇧🇪</span> Belgium</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇨🇭</span> Switzerland</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇦🇹</span> Austria</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇲🇹</span> Malta</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇨🇿</span> Czech Republic</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇩🇰</span> Denmark</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇬🇷</span> Greece</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇯🇵</span> Japan</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇰🇷</span> South Korea</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇨🇳</span> China</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇸🇬</span> Singapore</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇳🇿</span> New Zealand</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇭🇰</span> Hong Kong</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇮🇩</span> Indonesia</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇺🇿</span> Uzbekistan</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇰🇬</span> Kyrgyzstan</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇿🇦</span> South Africa</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇨🇾</span> Cyprus</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇷🇴</span> Romania</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇬🇪</span> Georgia</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇲🇺</span> Mauritius</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇰🇿</span> Kazakhstan</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇧🇷</span> Brazil</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇲🇽</span> Mexico</a>
-                                <a href="#button" class="flex items-center gap-2 hover:bg-stone-50 p-1.5 rounded-lg transition-all"><span class="text-base">🇷🇺</span> Russia</a>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-2.5 gap-x-4 text-[12px] font-medium normal-case text-brand-900 max-h-[380px] overflow-y-auto pr-2 no-scrollbar">
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇬🇧</span> United Kingdom</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇦🇺</span> Australia</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇨🇦</span> Canada</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇺🇸</span> United States</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇩🇪</span> Germany</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇮🇪</span> Ireland</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇦🇪</span> United Arab Emirates</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇸🇦</span> Saudi Arabia</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇹🇭</span> Thailand</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇲🇾</span> Malaysia</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇦🇿</span> Azerbaijan</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇹🇷</span> Turkey</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇻🇳</span> Vietnam</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇶🇦</span> Qatar</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇴🇲</span> Oman</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇧🇭</span> Bahrain</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇰🇼</span> Kuwait</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇲🇻</span> Maldives</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇱🇰</span> Sri Lanka</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇪🇬</span> Egypt</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇮🇹</span> Italy</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇫🇷</span> France</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇪🇸</span> Spain</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇵🇹</span> Portugal</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇭🇺</span> Hungary</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇵🇱</span> Poland</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇫🇮</span> Finland</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇳🇴</span> Norway</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇸🇪</span> Sweden</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇳🇱</span> Netherlands</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇧🇪</span> Belgium</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇨🇭</span> Switzerland</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇦🇹</span> Austria</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇲🇹</span> Malta</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇨🇿</span> Czech Republic</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇩🇰</span> Denmark</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇬🇷</span> Greece</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇯🇵</span> Japan</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇰🇷</span> South Korea</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇨🇳</span> China</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇸🇬</span> Singapore</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇳🇿</span> New Zealand</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇭🇰</span> Hong Kong</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇮🇩</span> Indonesia</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇺🇿</span> Uzbekistan</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇰🇬</span> Kyrgyzstan</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇿🇦</span> South Africa</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇨🇾</span> Cyprus</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇷🇴</span> Romania</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇬🇪</span> Georgia</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇲🇺</span> Mauritius</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇰🇿</span> Kazakhstan</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇧🇷</span> Brazil</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇲🇽</span> Mexico</a>
+                                <a href="#button" class="flex items-center gap-2.5 hover:bg-brand-50 p-2 rounded-lg transition-all"><span class="text-base flex-shrink-0">🇷🇺</span> Russia</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <a href="#visa" class="hover:text-brand-accent transition-colors duration-200">Visa Schemes</a>
-                <a href="#news" class="hover:text-brand-accent transition-colors duration-200">News & Alerts</a>
-                <a href="#contact" class="hover:text-brand-accent transition-colors duration-200">Contact</a>
+                <a href="#news" class="hover:text-brand-accent transition-colors duration-200">News & Updates</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors duration-200">Contact Us</a>
             </nav>
 
             <!-- CTA & Mobile Trigger Menu -->
             <div class="flex items-center gap-4">
-                <a href="#visa" class="hidden md:inline-block px-5 py-2.5 bg-brand-500 text-white rounded-full text-xs font-semibold tracking-wider uppercase hover:bg-brand-accent transition-all duration-300 shadow-md">Visa Schemes</a>
-                <button id="mobile-toggle" class="lg:hidden text-2xl text-brand-500 focus:outline-none transition-transform duration-300" aria-label="Toggle Navigation">
+                <a href="#visa" class="hidden md:inline-block px-5 py-2.5 bg-brand-900 text-white rounded-full text-xs font-semibold tracking-wider uppercase hover:bg-brand-accent transition-all duration-300 shadow-md">Visa Schemes</a>
+                <button id="mobile-toggle" class="lg:hidden text-2xl text-brand-900 focus:outline-none transition-transform duration-300" aria-label="Toggle Navigation">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Drawer Menu (Fixes overlapping and breaks by hosting countries index seamlessly) -->
         <div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-brand-50 z-40 transform translate-x-full opacity-0 pointer-events-none flex flex-col justify-between pt-24 pb-8 px-6 transition-all duration-300">
-            <div class="flex flex-col gap-4 text-lg font-serif text-brand-500 overflow-y-auto no-scrollbar max-h-[80vh] pt-4">
-                <a href="#home" class="mobile-nav-link border-b border-stone-200 pb-2.5 flex justify-between items-center text-stone-800">
+            <div class="flex flex-col gap-4 text-lg font-serif text-brand-900 overflow-y-auto no-scrollbar max-h-[80vh] pt-4">
+                <a href="#home" class="mobile-nav-link border-b border-brand-200 pb-2.5 flex justify-between items-center">
                     Home <span class="text-xs font-sans">→</span>
                 </a>
                 
-                <!-- Collapsible Country Accordion inside Mobile Interface -->
-                <div class="border-b border-stone-200 pb-2.5">
-                    <button id="mobile-accordion-toggle" class="w-full text-left flex justify-between items-center text-stone-800">
+                <!-- Collapsible Country Accordion inside Mobile Drawer -->
+                <div class="border-b border-brand-200 pb-2.5">
+                    <button id="mobile-accordion-toggle" class="w-full text-left flex justify-between items-center">
                         Countries Directory <span class="text-sm font-sans">+</span>
                     </button>
                     
-                    <!-- Searchable mobile container -->
                     <div id="mobile-countries-dropdown" class="max-h-0 overflow-hidden transition-all duration-300 pt-3">
-                        <input type="text" id="mobile-country-search" placeholder="Filter 55 countries..." class="w-full text-xs font-sans px-3 py-2 border border-stone-200 rounded-lg mb-2 focus:ring-1 focus:ring-brand-accent focus:border-brand-accent outline-none">
+                        <input type="text" id="mobile-country-search" placeholder="Filter 55 countries..." class="w-full text-xs font-sans px-3 py-2 border border-brand-200 rounded-lg mb-2 focus:ring-1 focus:ring-brand-accent focus:border-brand-accent outline-none bg-white">
                         
-                        <div id="mobile-country-list" class="grid grid-cols-2 gap-2 text-xs font-sans text-stone-600 max-h-[220px] overflow-y-auto pr-1">
-                            <!-- JS populated on load dynamically for clean rendering -->
+                        <div id="mobile-country-list" class="grid grid-cols-2 gap-2 text-xs font-sans text-brand-muted max-h-[200px] overflow-y-auto pr-1">
+                            <!-- JS populated dynamically -->
                         </div>
                     </div>
                 </div>
 
-                <a href="#visa" class="mobile-nav-link border-b border-stone-200 pb-2.5 flex justify-between items-center text-stone-800">
+                <a href="#visa" class="mobile-nav-link border-b border-brand-200 pb-2.5 flex justify-between items-center">
                     Visa Schemes <span class="text-xs font-sans">→</span>
                 </a>
-                <a href="#news" class="mobile-nav-link border-b border-stone-200 pb-2.5 flex justify-between items-center text-stone-800">
+                <a href="#news" class="mobile-nav-link border-b border-brand-200 pb-2.5 flex justify-between items-center">
                     News & Updates <span class="text-xs font-sans">→</span>
                 </a>
-                <a href="#contact" class="mobile-nav-link border-b border-stone-200 pb-2.5 flex justify-between items-center text-stone-800">
+                <a href="#contact" class="mobile-nav-link border-b border-brand-200 pb-2.5 flex justify-between items-center">
                     Contact Us <span class="text-xs font-sans">→</span>
                 </a>
             </div>
 
-            <!-- Footer Details inside Mobile Navigation Drawer -->
-            <div class="mt-4 border-t border-stone-200/60 pt-4">
-                <p class="text-[9px] text-stone-400 tracking-widest uppercase font-bold mb-1">Global Mobility Intelligence</p>
-                <p class="text-[11px] text-stone-500 leading-snug">Authentic, factual guides without corporate or government jargon.</p>
+            <div class="mt-4 border-t border-brand-200 pt-4">
+                <p class="text-[9px] text-brand-accent tracking-widest uppercase font-bold mb-1">Global Mobility Intelligence</p>
+                <p class="text-[11px] text-brand-muted leading-snug">Empowering youth with authentic, factual relocation steps.</p>
             </div>
         </div>
     </header>
 
-    <!-- Hero Area (Captures the clean, warm sunset lighting & visual minimalism of image_a5b6a1.jpg) -->
-    <section id="home" class="relative hero-bg min-h-screen flex items-center justify-center pt-24 pb-16">
+    <section id="home" class="relative hero-bg min-h-screen flex items-center justify-center pt-28 pb-16">
         <div class="container mx-auto px-4 md:px-8 lg:px-12 relative z-10 text-center flex flex-col items-center">
             
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-white/40 text-stone-700 text-[10px] tracking-wider uppercase font-semibold mb-6 shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-brand-200 text-brand-muted text-[10px] tracking-wider uppercase font-semibold mb-6 shadow-sm">
                 <i class="fa-solid fa-compass text-brand-accent animate-pulse"></i> Global mobility indexing active — 2026 Edition
             </div>
 
-            <!-- Editorial Sans/Serif mix from image_a5b6a1.jpg -->
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-normal text-brand-500 leading-[1.1] mb-5 tracking-tight max-w-4xl text-center">
-                The clear path to your <br>
-                <span class="serif-italic text-brand-accent text-5xl md:text-7xl lg:text-8xl italic font-serif">International Leap</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-normal text-brand-900 leading-[1.1] mb-5 tracking-tight max-w-4xl text-center">
+                The clear path to your <br class="hidden sm:block">
+                <span class="serif-italic text-brand-accent italic font-serif">International Leap</span>
             </h1>
             
-            <p class="text-sm md:text-base lg:text-lg text-stone-600 max-w-2xl mb-8 font-light leading-relaxed">
-                Skip government jargon. We process global mobility policies into straightforward, verified action routes so you can land safely.
+            <p class="text-sm md:text-base lg:text-lg text-brand-muted max-w-2xl mb-10 font-normal leading-relaxed">
+                Skip confusing bureaucracy. We process complex international visa programs and relocation metrics into actionable, jargon-free guides designed for young professionals.
             </p>
 
-            <!-- Global Search Bar Matrix (Configured elegantly to fit desktop pills or wrap correctly on mobile) -->
+            <!-- Unified Pill Search Container (Aligned and Cleanly Spaced on Desktop, Resizes Perfectly on Mobile) -->
             <div class="w-full max-w-2xl px-2 relative">
-                <div class="bg-white p-2 rounded-2xl sm:rounded-full shadow-lg flex flex-col sm:flex-row items-stretch sm:items-center border border-stone-200 hover:shadow-xl transition-shadow duration-300">
-                    <div class="flex items-center pl-3 pr-2 py-2 sm:py-0 text-stone-400">
-                        <i class="fa-solid fa-magnifying-glass ml-1"></i>
-                        <input type="text" id="global-search-input" placeholder="Search a country (e.g., Spain, Germany) or visa scheme..." class="w-full bg-transparent outline-none text-stone-800 pl-3 text-xs md:text-sm placeholder-stone-400 font-light" autocomplete="off">
+                <div class="bg-white rounded-full p-1.5 shadow-xl border border-brand-200 flex items-center focus-within:ring-2 focus-within:ring-brand-accent/30 transition-all duration-300">
+                    <div class="flex items-center pl-4 text-brand-muted/70 flex-grow">
+                        <i class="fa-solid fa-magnifying-glass text-xs md:text-sm"></i>
+                        <input type="text" id="global-search-input" placeholder="Search Spain, Germany, digital nomad, HPI..." class="w-full bg-transparent outline-none text-brand-900 pl-3 text-xs md:text-sm placeholder-brand-muted/50 font-normal" autocomplete="off">
                     </div>
-                    <button id="search-btn" class="bg-brand-500 text-white px-6 py-3.5 rounded-xl sm:rounded-full text-xs font-bold tracking-wider uppercase hover:bg-brand-accent transition-colors duration-200 mt-2 sm:mt-0 whitespace-nowrap">
-                        Search Now
+                    <button id="search-btn" class="bg-brand-900 hover:bg-brand-accent text-white px-5 md:px-7 py-3 md:py-3.5 rounded-full text-xs font-bold tracking-wider uppercase transition-colors duration-300 whitespace-nowrap">
+                        <span class="hidden sm:inline">Search Now</span>
+                        <span class="sm:hidden"><i class="fa-solid fa-arrow-right"></i></span>
                     </button>
                 </div>
 
-                <!-- Live Expandable Search Overlay Matches (Fills dynamic links for added pages) -->
-                <div id="search-results" class="hidden absolute top-full left-2 right-2 mt-2 bg-white rounded-xl shadow-2xl border border-stone-100 z-50 text-left p-3 max-h-[280px] overflow-y-auto no-scrollbar">
-                    <div class="text-[9px] font-bold text-stone-400 uppercase tracking-widest px-2 mb-1.5">Search Directory matches</div>
-                    <div id="search-results-list" class="space-y-0.5">
-                        <!-- Filled in JS -->
+                <!-- Dynamic Search Drops Matrix -->
+                <div id="search-results" class="hidden absolute top-full left-2 right-2 mt-2 bg-white rounded-2xl shadow-2xl border border-brand-200 z-50 text-left p-4 max-h-[300px] overflow-y-auto no-scrollbar">
+                    <div class="text-[9px] font-bold text-brand-accent uppercase tracking-widest px-2 mb-2">Search Directory Matches</div>
+                    <div id="search-results-list" class="space-y-1">
+                        <!-- Populated by JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- Authentic Press Endorsement Row -->
-            <div class="mt-16 md:mt-24 pt-6 border-t border-stone-300/40 w-full max-w-3xl flex flex-col items-center">
-                <p class="text-[9px] text-stone-400 mb-4 font-bold tracking-widest uppercase">Referenced by independent global citizens</p>
-                <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-55 grayscale contrast-125 text-xs font-bold text-stone-600">
-                    <span class="tracking-widest">EXPAT HUB</span>
-                    <span class="font-serif italic text-stone-800">The Global Nomad</span>
-                    <span class="tracking-tighter uppercase">STUDENT.TRAVEL</span>
-                    <span class="border-2 border-stone-800 px-1.5 py-0.5 text-[10px] tracking-widest uppercase">VISA LAB</span>
+            <!-- Authentic Endorsement Row -->
+            <div class="mt-16 md:mt-24 pt-6 border-t border-brand-200/50 w-full max-w-3xl flex flex-col items-center">
+                <p class="text-[9px] text-brand-muted uppercase tracking-widest font-bold mb-4">Referenced by independent global citizens</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-70 grayscale contrast-125 text-[11px] font-bold text-brand-muted tracking-widest uppercase">
+                    <span>EXPAT HUB</span>
+                    <span class="font-serif italic lowercase tracking-normal">nomad passport</span>
+                    <span>STUDENT.TRAVEL</span>
+                    <span class="border-2 border-brand-900 px-1.5 py-0.5 text-[10px] tracking-widest font-black text-brand-900">VISA MATRIX</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 md:py-28 bg-white relative">
         <div class="container mx-auto px-4 md:px-8 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 
-                <!-- Editorial content -->
                 <div class="order-2 lg:order-1">
                     <h2 class="text-xs font-bold text-brand-accent tracking-widest uppercase mb-3">About Us</h2>
-                    <h3 class="text-3xl md:text-4xl font-serif text-brand-500 mb-5 leading-tight">We analyze complex immigration policy so you don't have to.</h3>
+                    <h3 class="text-3xl md:text-4xl font-serif text-brand-900 mb-5 leading-tight">We analyze complex immigration policies so you don't have to.</h3>
                     
-                    <p class="text-stone-600 text-sm md:text-base mb-4 leading-relaxed font-light">
-                        Let's face it: official immigration platforms are often confusing, translation-challenged, and frustrating. Understanding whether you need to lock your savings in a bank account (*Sperrkonto*), apply for an income waiver, or translate multiple years of tax documents can delay your career for months.
+                    <p class="text-brand-muted text-sm md:text-base mb-4 leading-relaxed">
+                        Let's face it: official immigration portals are confusing, translation-challenged, and frustrating. Understanding whether you need to lock your savings in a bank account (*Sperrkonto*), verify continuous remote income, or translate years of tax documents can delay your career path for months.
                     </p>
-                    <p class="text-stone-600 text-sm md:text-base mb-6 leading-relaxed font-light">
-                        Factguide was constructed by expat writers, mobility researchers, and legal policy analysts. We parse state declarations every single day to ensure you work with accurate steps. No corporate fluff, just clean pathways designed for the new generation.
+                    <p class="text-brand-muted text-sm md:text-base mb-6 leading-relaxed">
+                        Factguide was built by independent mobility researchers and expat writers who believe in global access. We parse dynamic state declarations daily to map actionable paths. No corporate fluff, just the facts.
                     </p>
                     
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-50 border border-stone-100">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop" alt="Founder" class="w-11 h-11 rounded-full object-cover shadow-sm">
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-50 border border-brand-100">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop" alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover shadow-sm">
                         <div>
-                            <p class="font-bold text-xs text-brand-500">Sarah Chen</p>
-                            <p class="text-[11px] text-stone-500">Expat Mobility Director & Former Researcher</p>
+                            <p class="font-bold text-xs text-brand-900">Sarah Chen</p>
+                            <p class="text-[11px] text-brand-muted">Expat Mobility Lead & Former Immigration Researcher</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Visual Editorial Images (Ensured wrap safety on columns) -->
-                <div class="order-1 lg:order-2 grid grid-cols-2 gap-3 relative">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop" alt="Global planning" class="rounded-xl shadow-md w-full h-56 md:h-64 object-cover mt-6 md:mt-8 transition-transform duration-300 hover:scale-[1.01]">
-                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600&auto=format&fit=crop" alt="Expat workstation" class="rounded-xl shadow-md w-full h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-[1.01]">
+                <!-- Double Editorial Image Panels -->
+                <div class="order-1 lg:order-2 grid grid-cols-2 gap-4 relative">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop" alt="Global Planning Session" class="rounded-2xl shadow-md w-full h-56 md:h-64 object-cover mt-6 md:mt-8 transition-transform duration-300 hover:scale-[1.01]">
+                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600&auto=format&fit=crop" alt="Nomad Workstation" class="rounded-2xl shadow-md w-full h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-[1.01]">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section (Redesigned box aesthetics to look highly editorial instead of typical AI-generated grids) -->
-    <section id="services" class="py-20 md:py-28 bg-brand-50">
+    <section id="services" class="py-20 md:py-28 bg-brand-100">
         <div class="container mx-auto px-4 md:px-8 lg:px-12">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-brand-accent tracking-widest uppercase mb-3">Our Services</h2>
-                <h3 class="text-3xl md:text-4xl font-serif text-brand-500 mb-3">Relocation intelligence with absolute clarity</h3>
-                <p class="text-stone-600 font-light text-sm md:text-base">We prioritize the core pathways that help you move, study, and build remote tax compliance.</p>
+                <h2 class="text-xs font-bold text-brand-accent tracking-widest uppercase mb-3">Our Core Scope</h2>
+                <h3 class="text-3xl md:text-4xl font-serif text-brand-900 mb-3">Targeted global mobility decoders</h3>
+                <p class="text-brand-muted text-sm md:text-base">We prioritize the practical steps required to successfully transition your life across borders.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Service 1 -->
-                <div class="bg-white p-6 rounded-xl border border-stone-200/60 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                <div class="bg-white p-6 rounded-2xl border border-brand-200/50 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-brand-accent text-2xl mb-4"><i class="fa-solid fa-passport"></i></div>
-                        <h4 class="text-base font-bold text-brand-500 mb-2">Sponsorship Map Decoders</h4>
-                        <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed mb-4">Granular breakups of active company sponsorships, points-based qualification tiers, and legal local registration steps.</p>
+                        <h4 class="text-base font-bold text-brand-900 mb-2">Sponsorship Decoders</h4>
+                        <p class="text-brand-muted text-xs md:text-sm leading-relaxed mb-4">Complete audits of professional employer registers, qualifying occupation codes, and local registration steps.</p>
                     </div>
-                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-500 transition-colors inline-flex items-center gap-1">Visa schemes <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
+                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-900 transition-colors inline-flex items-center gap-1">Visa Schemes <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-white p-6 rounded-xl border border-stone-200/60 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                <div class="bg-white p-6 rounded-2xl border border-brand-200/50 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-brand-accent text-2xl mb-4"><i class="fa-solid fa-laptop"></i></div>
-                        <h4 class="text-base font-bold text-brand-500 mb-2">Nomad Tax Frameworks</h4>
-                        <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed mb-4">Critical breakdowns of double-taxation pacts, corporate compliance thresholds, and low-tax residency brackets across Europe and Asia.</p>
+                        <h4 class="text-base font-bold text-brand-900 mb-2">Nomad Tax Frameworks</h4>
+                        <p class="text-brand-muted text-xs md:text-sm leading-relaxed mb-4">Critical overviews of double-taxation agreements, legal fiscal brackets, and flat income-tax options globally.</p>
                     </div>
-                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-500 transition-colors inline-flex items-center gap-1">Browse taxes <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
+                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-900 transition-colors inline-flex items-center gap-1">Browse Taxes <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white p-6 rounded-xl border border-stone-200/60 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                <div class="bg-white p-6 rounded-2xl border border-brand-200/50 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-brand-accent text-2xl mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
-                        <h4 class="text-base font-bold text-brand-500 mb-2">Grad Work Rights Analysis</h4>
-                        <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed mb-4">Step-by-step mapping of post-graduate work transitions, including UK Graduate Routes and Canada's PGWP criteria changes.</p>
+                        <h4 class="text-base font-bold text-brand-900 mb-2">Graduation Transitions</h4>
+                        <p class="text-brand-muted text-xs md:text-sm leading-relaxed mb-4">Mapping graduate path changes, PGWP structural adjustments, and job seeker timelines in leading nations.</p>
                     </div>
-                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-500 transition-colors inline-flex items-center gap-1">Graduate routes <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
+                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-900 transition-colors inline-flex items-center gap-1">Graduate Routes <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="bg-white p-6 rounded-xl border border-stone-200/60 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+                <div class="bg-white p-6 rounded-2xl border border-brand-200/50 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-brand-accent text-2xl mb-4"><i class="fa-solid fa-map-location-dot"></i></div>
-                        <h4 class="text-base font-bold text-brand-500 mb-2">Anmeldung & Landing Action</h4>
-                        <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed mb-4">Practical survival guidelines detailing health insurance, localized registration requirements, and regional rental checks.</p>
+                        <h4 class="text-base font-bold text-brand-900 mb-2">First 30 Days Action</h4>
+                        <p class="text-stone-600 text-xs md:text-sm leading-relaxed mb-4">Survival guides covering city address registry (*Anmeldung*), local health plans, and bank account creation.</p>
                     </div>
-                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-500 transition-colors inline-flex items-center gap-1">Landing guides <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
+                    <a href="#visa" class="text-[10px] font-bold uppercase tracking-widest text-brand-accent hover:text-brand-900 transition-colors inline-flex items-center gap-1">Landing Guides <i class="fa-solid fa-arrow-right text-[8px]"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Popular Visa Categories with Real Requirements -->
     <section id="visa" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-4 md:px-8 lg:px-12">
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-5">
                 <div>
                     <h2 class="text-xs font-bold text-brand-accent tracking-widest uppercase mb-3">Relocation Visas</h2>
-                    <h3 class="text-3xl md:text-4xl font-serif text-brand-500">Validated Visa Frameworks</h3>
+                    <h3 class="text-3xl md:text-4xl font-serif text-brand-900">Verified Relocation Models</h3>
                 </div>
                 
-                <!-- Category filtering toggles -->
-                <div class="flex flex-wrap gap-2 text-[10px] font-bold tracking-wider uppercase border-b border-stone-100 pb-1.5 w-full lg:w-auto">
-                    <button onclick="filterVisas('all')" id="tab-all" class="px-3 py-1.5 text-brand-500 border-b-2 border-brand-500 transition-all">All Paths</button>
-                    <button onclick="filterVisas('nomad')" id="tab-nomad" class="px-3 py-1.5 text-stone-400 hover:text-brand-500 transition-all">Digital Nomad</button>
-                    <button onclick="filterVisas('work')" id="tab-work" class="px-3 py-1.5 text-stone-400 hover:text-brand-500 transition-all">Skilled Professional</button>
-                    <button onclick="filterVisas('holiday')" id="tab-holiday" class="px-3 py-1.5 text-stone-400 hover:text-brand-500 transition-all">Working Holiday</button>
+                <!-- Visa filter controls -->
+                <div class="flex flex-wrap gap-2 text-[10px] font-bold tracking-wider uppercase border-b border-brand-100 pb-1.5 w-full lg:w-auto">
+                    <button onclick="filterVisas('all')" id="tab-all" class="px-3.5 py-2 text-brand-accent border-b-2 border-brand-accent transition-all">All Paths</button>
+                    <button onclick="filterVisas('nomad')" id="tab-nomad" class="px-3.5 py-2 text-brand-muted hover:text-brand-accent transition-all">Digital Nomad</button>
+                    <button onclick="filterVisas('work')" id="tab-work" class="px-3.5 py-2 text-brand-muted hover:text-brand-accent transition-all">Skilled Professional</button>
+                    <button onclick="filterVisas('holiday')" id="tab-holiday" class="px-3.5 py-2 text-brand-muted hover:text-brand-accent transition-all">Working Holiday</button>
                 </div>
             </div>
 
-            <!-- Dynamic Visa Grid -->
+            <!-- Visa Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="visa-cards-container">
                 
-                <!-- Card 1 (Spain Nomad) -->
-                <div class="visa-card bg-brand-50 p-6 rounded-xl border border-stone-200/50 hover:border-brand-accent/60 transition-all duration-300" data-category="nomad">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-2xl">🇪🇸</span>
-                        <span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-700 text-[9px] font-bold tracking-wider uppercase rounded-full">Easy Application</span>
+                <!-- Card 1 -->
+                <div class="visa-card bg-brand-50 p-6 rounded-2xl border border-brand-200 hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between" data-category="nomad">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-2xl">🇪🇸</span>
+                            <span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-800 text-[9px] font-bold tracking-wider uppercase rounded-full border border-emerald-200">Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-900 mb-2">Spain Digital Nomad Visa</h4>
+                        <p class="text-brand-muted text-xs md:text-sm mb-4 leading-relaxed">Required minimum income of €2,640/month. Grants Beckham Law eligibility, giving qualifying remote professionals flat 24% tax caps.</p>
                     </div>
-                    <h4 class="text-lg font-bold text-brand-500 mb-2">Spain Digital Nomad Visa</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light mb-4 leading-relaxed">Required minimum income of €2,640/month. Permits special taxation status with corporate/freelancer discounts under the Beckham Law.</p>
-                    
-                    <div class="border-t border-stone-200/50 pt-3 mt-4 flex justify-between items-center text-xs text-stone-500">
+                    <div class="border-t border-brand-200 pt-3 mt-4 flex justify-between items-center text-xs text-brand-muted">
                         <span>Earnings: <strong>€31,680/yr</strong></span>
-                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Request details</a>
+                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Get Steps</a>
                     </div>
                 </div>
 
-                <!-- Card 2 (Germany Opportunity Card) -->
-                <div class="visa-card bg-brand-50 p-6 rounded-xl border border-stone-200/50 hover:border-brand-accent/60 transition-all duration-300" data-category="work">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-2xl">🇩🇪</span>
-                        <span class="px-2.5 py-0.5 bg-blue-50 text-blue-700 text-[9px] font-bold tracking-wider uppercase rounded-full">Points Matrix</span>
+                <!-- Card 2 -->
+                <div class="visa-card bg-brand-50 p-6 rounded-2xl border border-brand-200 hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between" data-category="work">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-2xl">🇩🇪</span>
+                            <span class="px-2.5 py-0.5 bg-blue-50 text-blue-800 text-[9px] font-bold tracking-wider uppercase rounded-full border border-blue-200">Opportunity Card</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-900 mb-2">Chancenkarte (Germany)</h4>
+                        <p class="text-brand-muted text-xs md:text-sm mb-4 leading-relaxed">Enter Germany to secure local job roles. Requires a minimum score of 6 points based on degrees, languages, and work experience.</p>
                     </div>
-                    <h4 class="text-lg font-bold text-brand-500 mb-2">Chancenkarte (Germany)</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light mb-4 leading-relaxed">Enter Germany to secure local job roles. Requires a minimum score of 6 points based on degrees, languages, and work experience.</p>
-                    
-                    <div class="border-t border-stone-200/50 pt-3 mt-4 flex justify-between items-center text-xs text-stone-500">
-                        <span>Min. Balance: <strong>€12,300 Blocked</strong></span>
-                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Request details</a>
-                    </div>
-                </div>
-
-                <!-- Card 3 (Australia subclass 417) -->
-                <div class="visa-card bg-brand-50 p-6 rounded-xl border border-stone-200/50 hover:border-brand-accent/60 transition-all duration-300" data-category="holiday">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-2xl">🇦🇺</span>
-                        <span class="px-2.5 py-0.5 bg-amber-50 text-amber-700 text-[9px] font-bold tracking-wider uppercase rounded-full">Up to Age 35</span>
-                    </div>
-                    <h4 class="text-lg font-bold text-brand-500 mb-2">Working Holiday (Subclass 417)</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light mb-4 leading-relaxed">Work and explore Australia for up to 3 years. Recently modernized to exclude mandatory regional farm work for certain countries.</p>
-                    
-                    <div class="border-t border-stone-200/50 pt-3 mt-4 flex justify-between items-center text-xs text-stone-500">
-                        <span>Funds: <strong>AUD $5,000</strong></span>
-                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Request details</a>
+                    <div class="border-t border-brand-200 pt-3 mt-4 flex justify-between items-center text-xs text-brand-muted">
+                        <span>Proof of Funds: <strong>€12,300 Blocked</strong></span>
+                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Get Steps</a>
                     </div>
                 </div>
 
-                <!-- Card 4 (Portugal D8) -->
-                <div class="visa-card bg-brand-50 p-6 rounded-xl border border-stone-200/50 hover:border-brand-accent/60 transition-all duration-300" data-category="nomad">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-2xl">🇵🇹</span>
-                        <span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-700 text-[9px] font-bold tracking-wider uppercase rounded-full">Premium Option</span>
+                <!-- Card 3 -->
+                <div class="visa-card bg-brand-50 p-6 rounded-2xl border border-brand-200 hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between" data-category="holiday">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-2xl">🇦🇺</span>
+                            <span class="px-2.5 py-0.5 bg-amber-50 text-amber-800 text-[9px] font-bold tracking-wider uppercase rounded-full border border-amber-200">Ages 18-35</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-900 mb-2">Working Holiday (Subclass 417)</h4>
+                        <p class="text-brand-muted text-xs md:text-sm mb-4 leading-relaxed">Work and explore Australia for up to 3 years. Recently updated to relax specific regional farming demands for select nationalities.</p>
                     </div>
-                    <h4 class="text-lg font-bold text-brand-500 mb-2">Portugal D8 Nomad Visa</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light mb-4 leading-relaxed">Proof of stable foreign income matching four times the national minimum wage. Provides direct residency scaling.</p>
-                    
-                    <div class="border-t border-stone-200/50 pt-3 mt-4 flex justify-between items-center text-xs text-stone-500">
+                    <div class="border-t border-brand-200 pt-3 mt-4 flex justify-between items-center text-xs text-brand-muted">
+                        <span>Requirements: <strong>AUD $5,000 Balance</strong></span>
+                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Get Steps</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="visa-card bg-brand-50 p-6 rounded-2xl border border-brand-200 hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between" data-category="nomad">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-2xl">🇵🇹</span>
+                            <span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-800 text-[9px] font-bold tracking-wider uppercase rounded-full border border-emerald-200">Residency Map</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-900 mb-2">Portugal D8 Nomad Visa</h4>
+                        <p class="text-brand-muted text-xs md:text-sm mb-4 leading-relaxed">Requires stable foreign corporate income. Offers direct paths to 2-year physical residency cards and NIF registration.</p>
+                    </div>
+                    <div class="border-t border-brand-200 pt-3 mt-4 flex justify-between items-center text-xs text-brand-muted">
                         <span>Income: <strong>€39,360/yr</strong></span>
-                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Request details</a>
+                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Get Steps</a>
                     </div>
                 </div>
 
-                <!-- Card 5 (Japan Activities) -->
-                <div class="visa-card bg-brand-50 p-6 rounded-xl border border-stone-200/50 hover:border-brand-accent/60 transition-all duration-300" data-category="nomad">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-2xl">🇯🇵</span>
-                        <span class="px-2.5 py-0.5 bg-rose-50 text-rose-700 text-[9px] font-bold tracking-wider uppercase rounded-full">Premium Income</span>
+                <!-- Card 5 -->
+                <div class="visa-card bg-brand-50 p-6 rounded-2xl border border-brand-200 hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between" data-category="nomad">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-2xl">🇯🇵</span>
+                            <span class="px-2.5 py-0.5 bg-rose-50 text-rose-800 text-[9px] font-bold tracking-wider uppercase rounded-full border border-rose-200">6-Month program</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-900 mb-2">Japan Nomad Program</h4>
+                        <p class="text-brand-muted text-xs md:text-sm mb-4 leading-relaxed">Targeted nomad stays up to 180 days. Restricted to remote professionals holding verified individual earnings above ¥10 Million.</p>
                     </div>
-                    <h4 class="text-lg font-bold text-brand-500 mb-2">Japan Nomad Program</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light mb-4 leading-relaxed">Allows stay profiles of up to 6 months. Exclusively available to applicants holding corporate earnings above ¥10 Million.</p>
-                    
-                    <div class="border-t border-stone-200/50 pt-3 mt-4 flex justify-between items-center text-xs text-stone-500">
-                        <span>Earnings: <strong>~$60,000/yr</strong></span>
-                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Request details</a>
+                    <div class="border-t border-brand-200 pt-3 mt-4 flex justify-between items-center text-xs text-brand-muted">
+                        <span>Min. Earnings: <strong>~$60,000/yr</strong></span>
+                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Get Steps</a>
                     </div>
                 </div>
 
-                <!-- Card 6 (UK Graduate sponsor alternative) -->
-                <div class="visa-card bg-brand-50 p-6 rounded-xl border border-stone-200/50 hover:border-brand-accent/60 transition-all duration-300" data-category="work">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-2xl">🇬🇧</span>
-                        <span class="px-2.5 py-0.5 bg-indigo-50 text-indigo-700 text-[9px] font-bold tracking-wider uppercase rounded-full">No Sponsor Needed</span>
+                <!-- Card 6 -->
+                <div class="visa-card bg-brand-50 p-6 rounded-2xl border border-brand-200 hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between" data-category="work">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-2xl">🇬🇧</span>
+                            <span class="px-2.5 py-0.5 bg-indigo-50 text-indigo-800 text-[9px] font-bold tracking-wider uppercase rounded-full border border-indigo-200">No Sponsor Req.</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-brand-900 mb-2">High Potential Individual (HPI)</h4>
+                        <p class="text-brand-muted text-xs md:text-sm mb-4 leading-relaxed">Live and work in the UK for up to 2 years without an employer sponsor if you hold an eligible degree from a globally ranked university.</p>
                     </div>
-                    <h4 class="text-lg font-bold text-brand-500 mb-2">High Potential Individual (HPI)</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light mb-4 leading-relaxed">Live and work in the UK for 2 years without physical employer sponsorship if you graduated from a top 50 ranked global university.</p>
-                    
-                    <div class="border-t border-stone-200/50 pt-3 mt-4 flex justify-between items-center text-xs text-stone-500">
-                        <span>Eligibility: <strong>Ranked Top-50 Degree</strong></span>
-                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Request details</a>
+                    <div class="border-t border-brand-200 pt-3 mt-4 flex justify-between items-center text-xs text-brand-muted">
+                        <span>Graduation: <strong>Global Top 50</strong></span>
+                        <a href="#contact" class="text-brand-accent font-bold hover:underline">Get Steps</a>
                     </div>
                 </div>
 
@@ -489,158 +477,152 @@
         </div>
     </section>
 
-    <!-- Global statistics banner with border improvements (Responsive layout fix: no lines overflow on mobile) -->
-    <section class="py-14 bg-brand-500 text-brand-50 relative overflow-hidden">
+    <section class="py-14 bg-brand-900 text-brand-50 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px); background-size: 20px 20px;"></div>
         
         <div class="container mx-auto px-4 md:px-8 relative z-10">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-stone-700/50 divide-y md:divide-y-0 md:divide-x">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-stone-800 divide-y md:divide-y-0 md:divide-x">
                 <div class="pt-4 md:pt-0">
                     <div class="text-3xl md:text-4xl font-serif mb-1.5 font-bold text-brand-accent">195+</div>
-                    <p class="text-[9px] font-bold text-stone-300 uppercase tracking-widest">Nations Covered</p>
+                    <p class="text-[9px] font-bold text-brand-200 uppercase tracking-widest">Nations Audited</p>
                 </div>
                 <div class="pt-4 md:pt-0">
                     <div class="text-3xl md:text-4xl font-serif mb-1.5 font-bold text-brand-accent">5,200+</div>
-                    <p class="text-[9px] font-bold text-stone-300 uppercase tracking-widest">Visa Tiers Audited</p>
+                    <p class="text-[9px] font-bold text-brand-200 uppercase tracking-widest">Visa Tiers Logged</p>
                 </div>
                 <div class="pt-4 md:pt-0">
                     <div class="text-3xl md:text-4xl font-serif mb-1.5 font-bold text-brand-accent">Daily</div>
-                    <p class="text-[9px] font-bold text-stone-300 uppercase tracking-widest">Policy Scans</p>
+                    <p class="text-[9px] font-bold text-brand-200 uppercase tracking-widest">Policy Scans</p>
                 </div>
                 <div class="pt-4 md:pt-0">
                     <div class="text-3xl md:text-4xl font-serif mb-1.5 font-bold text-brand-accent">1.2M+</div>
-                    <p class="text-[9px] font-bold text-stone-300 uppercase tracking-widest">Monthly Seekers</p>
+                    <p class="text-[9px] font-bold text-brand-200 uppercase tracking-widest">Annual Seekers</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Policy News & Updates (Parsing real-world, legal global policy updates, completely removing AI fluff) -->
     <section id="news" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-4 md:px-8 lg:px-12">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
                 <div>
                     <h2 class="text-xs font-bold text-brand-accent tracking-widest uppercase mb-3">Mobility News</h2>
-                    <h3 class="text-3xl md:text-4xl font-serif text-brand-500">Global Policy Shifts</h3>
+                    <h3 class="text-3xl md:text-4xl font-serif text-brand-900">Recent Policy Updates</h3>
                 </div>
-                <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-500 hover:text-brand-accent transition-colors">
+                <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-900 hover:text-brand-accent transition-colors">
                     Report policy change <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
 
-            <!-- Authentic News Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- News Article 1 (Canada Digital Nomad tightens) -->
+                <!-- News 1 -->
                 <article class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-xl mb-4 h-52 bg-stone-100 relative">
-                        <img src="https://images.unsplash.com/photo-1519074069444-1ba4e6663104?q=80&w=600&auto=format&fit=crop" alt="Canada scenery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-52 bg-brand-100 relative">
+                        <img src="https://images.unsplash.com/photo-1519074069444-1ba4e6663104?q=80&w=600&auto=format&fit=crop" alt="Canada Scenery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="flex items-center gap-3 mb-2.5">
-                        <span class="px-2 py-0.5 bg-stone-100 text-stone-700 text-[9px] font-bold uppercase rounded tracking-wider">Canada</span>
-                        <span class="text-stone-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> May 31, 2026</span>
+                        <span class="px-2 py-0.5 bg-brand-100 text-brand-900 text-[9px] font-bold uppercase rounded tracking-wider border border-brand-200">Canada</span>
+                        <span class="text-brand-muted text-xs"><i class="fa-regular fa-clock mr-1"></i> May 2026 Update</span>
                     </div>
-                    <h4 class="text-base font-bold text-brand-500 mb-2 group-hover:text-brand-accent transition-colors line-clamp-2">IRCC Tightens Remote Work Entry Checks for Digital Nomads</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed line-clamp-3">Immigration officers are directed to strictly verify that applicants earn income entirely outside the domestic labor market. New guidelines mandate visitor records and explicit foreign employment contracts upon border arrival.</p>
+                    <h4 class="text-base font-bold text-brand-900 mb-2 group-hover:text-brand-accent transition-colors line-clamp-2">IRCC Tightens Border Entry Controls for Remote Working Nomads</h4>
+                    <p class="text-brand-muted text-xs md:text-sm font-light leading-relaxed line-clamp-3">Immigration officials are directed to strictly verify that applicants earn income entirely outside the domestic labor market. New guidelines mandate explicit proof of foreign employment upon physical arrival.</p>
                 </article>
 
-                <!-- News Article 2 (Schengen EES fully active) -->
+                <!-- News 2 -->
                 <article class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-xl mb-4 h-52 bg-stone-100 relative">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="European border crossing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-52 bg-brand-100 relative">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="European Border" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="flex items-center gap-3 mb-2.5">
-                        <span class="px-2 py-0.5 bg-stone-100 text-stone-700 text-[9px] font-bold uppercase rounded tracking-wider">Europe / Schengen</span>
-                        <span class="text-stone-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> June 2026 Update</span>
+                        <span class="px-2 py-0.5 bg-brand-100 text-brand-900 text-[9px] font-bold uppercase rounded tracking-wider border border-brand-200">Schengen Area</span>
+                        <span class="text-brand-muted text-xs"><i class="fa-regular fa-clock mr-1"></i> April 2026 Update</span>
                     </div>
-                    <h4 class="text-base font-bold text-brand-500 mb-2 group-hover:text-brand-accent transition-colors line-clamp-2">Biometric EES Border Tracking System Operational Across 29 Nations</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed line-clamp-3">The Entry/Exit System (EES) has completely replaced physical ink passport stamps with digital facial scans and fingerprint recording. Border zones report initial clearance delays as travelers establish digital travel logs.</p>
+                    <h4 class="text-base font-bold text-brand-900 mb-2 group-hover:text-brand-accent transition-colors line-clamp-2">Biometric EES Border Tracking System Now Fully Operational</h4>
+                    <p class="text-brand-muted text-xs md:text-sm font-light leading-relaxed line-clamp-3">The long-awaited Entry/Exit System (EES) has replaced physical ink passport stamps with facial scans and digital logs across 29 European countries. Border checkpoints report longer initial processing times.</p>
                 </article>
 
-                <!-- News Article 3 (Schengen Rejections) -->
+                <!-- News 3 -->
                 <article class="group cursor-pointer">
-                    <div class="overflow-hidden rounded-xl mb-4 h-52 bg-stone-100 relative">
-                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=600&auto=format&fit=crop" alt="European city" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="overflow-hidden rounded-2xl mb-4 h-52 bg-brand-100 relative">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=600&auto=format&fit=crop" alt="Schengen Visa Audit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="flex items-center gap-3 mb-2.5">
-                        <span class="px-2 py-0.5 bg-stone-100 text-stone-700 text-[9px] font-bold uppercase rounded tracking-wider">EU Visa Audit</span>
-                        <span class="text-stone-400 text-xs"><i class="fa-regular fa-clock mr-1"></i> June 2026 Metrics</span>
+                        <span class="px-2 py-0.5 bg-brand-100 text-brand-900 text-[9px] font-bold uppercase rounded tracking-wider border border-brand-200">EU Visa Audit</span>
+                        <span class="text-brand-muted text-xs"><i class="fa-regular fa-clock mr-1"></i> March 2026 metrics</span>
                     </div>
-                    <h4 class="text-base font-bold text-brand-500 mb-2 group-hover:text-brand-accent transition-colors line-clamp-2">European Commission Releases Visa Audits: Rejections Peak in Small Markets</h4>
-                    <p class="text-stone-600 text-xs md:text-sm font-light leading-relaxed line-clamp-3">Latest statistics show significant variance across European consulates. Malta sits at the highest non-issuance rating of 38.4%, while major portals like Germany and Switzerland maintain average approval rates near 88%.</p>
+                    <h4 class="text-base font-bold text-brand-900 mb-2 group-hover:text-brand-accent transition-colors line-clamp-2">European Commission Releases Visa Audits: Rejection Rates Disclosed</h4>
+                    <p class="text-brand-muted text-xs md:text-sm font-light leading-relaxed line-clamp-3">The latest consolidated statistics show significant variance across European consulates. Malta reports the highest non-issuance rating of 38%, while major gateways like Germany and Spain maintain approval margins near 85%.</p>
                 </article>
 
             </div>
         </div>
     </section>
 
-    <!-- Interactive Wizard Tool -->
-    <section class="py-16 bg-brand-50 border-t border-b border-stone-200/50">
+    <section class="py-16 bg-brand-100 border-t border-b border-brand-200/50">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-stone-200/50">
+            <div class="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-brand-200">
                 <div class="text-center mb-8">
-                    <span class="text-[9px] font-bold tracking-widest text-brand-accent uppercase bg-brand-50 px-3 py-1.5 rounded-full inline-block mb-3.5">Self Evaluation Tool</span>
-                    <h3 class="text-2xl md:text-3xl font-serif text-brand-500">Find your legal path match</h3>
-                    <p class="text-stone-500 text-xs md:text-sm mt-1">Select your status below to filter pathways instantly.</p>
+                    <span class="text-[9px] font-bold tracking-widest text-brand-accent uppercase bg-brand-50 border border-brand-200 px-3 py-1.5 rounded-full inline-block mb-3.5">Assessment Tool</span>
+                    <h3 class="text-2xl md:text-3xl font-serif text-brand-900">Find your legal path match</h3>
+                    <p class="text-brand-muted text-xs md:text-sm mt-1">Select your profile to match active migration programs.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <button onclick="runCheck('graduate')" class="quick-check-btn border border-stone-200 rounded-xl p-5 text-left hover:border-brand-accent transition-colors outline-none focus:ring-1 focus:ring-brand-accent">
+                    <button onclick="runCheck('graduate')" class="quick-check-btn border border-brand-200 rounded-xl p-5 text-left hover:border-brand-accent transition-colors outline-none focus:ring-1 focus:ring-brand-accent">
                         <div class="text-2xl mb-2">🎓</div>
-                        <h4 class="font-bold text-brand-500 text-xs md:text-sm mb-1">Recent Graduate</h4>
-                        <p class="text-stone-500 text-[11px] font-light leading-relaxed">Completed a degree within the past 5 years at an accredited global university.</p>
+                        <h4 class="font-bold text-brand-900 text-xs md:text-sm mb-1">Recent Graduate</h4>
+                        <p class="text-brand-muted text-[11px] font-light leading-relaxed">Completed a degree within the past 5 years at an accredited global university.</p>
                     </button>
-                    <button onclick="runCheck('remote')" class="quick-check-btn border border-stone-200 rounded-xl p-5 text-left hover:border-brand-accent transition-colors outline-none focus:ring-1 focus:ring-brand-accent">
+                    <button onclick="runCheck('remote')" class="quick-check-btn border border-brand-200 rounded-xl p-5 text-left hover:border-brand-accent transition-colors outline-none focus:ring-1 focus:ring-brand-accent">
                         <div class="text-2xl mb-2">💻</div>
-                        <h4 class="font-bold text-brand-500 text-xs md:text-sm mb-1">Remote Professional</h4>
-                        <p class="text-stone-500 text-[11px] font-light leading-relaxed">Employed by entities registered outside your targeted destination country.</p>
+                        <h4 class="font-bold text-brand-900 text-xs md:text-sm mb-1">Remote Professional</h4>
+                        <p class="text-brand-muted text-[11px] font-light leading-relaxed">Employed by entities registered outside your targeted destination country.</p>
                     </button>
-                    <button onclick="runCheck('youth')" class="quick-check-btn border border-stone-200 rounded-xl p-5 text-left hover:border-brand-accent transition-colors outline-none focus:ring-1 focus:ring-brand-accent">
+                    <button onclick="runCheck('youth')" class="quick-check-btn border border-brand-200 rounded-xl p-5 text-left hover:border-brand-accent transition-colors outline-none focus:ring-1 focus:ring-brand-accent">
                         <div class="text-2xl mb-2">🎒</div>
-                        <h4 class="font-bold text-brand-500 text-xs md:text-sm mb-1">Working Explorer</h4>
-                        <p class="text-stone-500 text-[11px] font-light leading-relaxed">Aged 18 to 35 seeking local, flexible work options combined with tourism.</p>
+                        <h4 class="font-bold text-brand-900 text-xs md:text-sm mb-1">Working Explorer</h4>
+                        <p class="text-brand-muted text-[11px] font-light leading-relaxed">Aged 18 to 35 seeking local, flexible work options combined with tourism.</p>
                     </button>
                 </div>
 
-                <div id="quick-check-result" class="hidden bg-stone-50 border border-stone-200/60 rounded-xl p-5 text-center animate-fade-in">
-                    <p id="quick-check-text" class="text-stone-700 text-xs md:text-sm font-medium leading-relaxed"></p>
-                    <a href="#visa" class="inline-block mt-3 text-xs font-bold uppercase tracking-wider text-brand-accent hover:underline">Compare visa rules</a>
+                <div id="quick-check-result" class="hidden bg-brand-50 border border-brand-200 rounded-xl p-5 text-center animate-fade-in">
+                    <p id="quick-check-text" class="text-brand-900 text-xs md:text-sm font-medium leading-relaxed"></p>
+                    <a href="#visa" class="inline-block mt-3 text-xs font-bold uppercase tracking-wider text-brand-accent hover:underline">Compare Visa Rules</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Formspree Capable Contact Section -->
     <section id="contact" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-4 md:px-8 lg:px-12">
-            <div class="bg-brand-500 text-brand-50 rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-xl">
+            <div class="bg-brand-900 text-brand-50 rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-xl">
                 
-                <!-- Contact Context block -->
-                <div class="p-8 md:p-12 lg:w-2/5 flex flex-col justify-between relative bg-[#131110]">
-                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="p-8 md:p-12 lg:w-2/5 flex flex-col justify-between relative bg-[#0b0f19]">
+                    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
                     
                     <div class="relative z-10">
                         <h3 class="text-2xl md:text-3xl font-serif mb-5">Talk with our researchers.</h3>
-                        <p class="text-stone-400 text-xs md:text-sm font-light leading-relaxed mb-8">
+                        <p class="text-brand-200 text-xs md:text-sm font-light leading-relaxed mb-8">
                             Spot an obsolete local policy? Writing custom relocation analysis? Connect with us directly and receive a response within 24 working hours.
                         </p>
                         
                         <div class="space-y-5">
                             <div class="flex items-start gap-3.5">
-                                <div class="w-9 h-9 rounded-full bg-stone-800 flex items-center justify-center flex-shrink-0">
+                                <div class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0">
                                     <i class="fa-regular fa-envelope text-brand-accent"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-[9px] font-bold tracking-widest uppercase text-stone-400">Direct Contact</h4>
+                                    <h4 class="text-[9px] font-bold tracking-widest uppercase text-brand-200">Direct Contact</h4>
                                     <p class="text-xs md:text-sm font-medium text-white">intel@factguide.com</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-3.5">
-                                <div class="w-9 h-9 rounded-full bg-stone-800 flex items-center justify-center flex-shrink-0">
+                                <div class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0">
                                     <i class="fa-solid fa-location-dot text-brand-accent"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-[9px] font-bold tracking-widest uppercase text-stone-400">HQ Desk</h4>
+                                    <h4 class="text-[9px] font-bold tracking-widest uppercase text-brand-200">HQ Desk</h4>
                                     <p class="text-xs md:text-sm font-medium text-white">404 Alabaster Boulevard<br>Lisbon, Portugal</p>
                                 </div>
                             </div>
@@ -648,33 +630,32 @@
                     </div>
                     
                     <div class="flex gap-3 mt-8 relative z-10">
-                        <a href="#button" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-accent text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-x-twitter text-xs"></i></a>
-                        <a href="#button" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-accent text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
-                        <a href="#button" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-accent text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                        <a href="#button" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-accent text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                        <a href="#button" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-accent text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                        <a href="#button" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-accent text-white flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
                     </div>
                 </div>
 
                 <!-- Formspree Configured Form -->
-                <div class="p-8 md:p-12 lg:w-3/5 bg-brand-50 text-brand-500">
-                    <!-- ACTION: Change the dummy code hash to your own real Formspree Form ID to connect -->
+                <div class="p-8 md:p-12 lg:w-3/5 bg-brand-50 text-brand-900">
                     <form action="https://formspree.io/f/your-formspree-id" method="POST" class="space-y-5">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-[9px] font-bold tracking-widest uppercase text-stone-500 mb-1.5">First Name</label>
-                                <input type="text" name="first_name" required class="w-full px-3.5 py-3 rounded-xl border border-stone-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all" placeholder="Sarah">
+                                <label class="block text-[9px] font-bold tracking-widest uppercase text-brand-muted mb-1.5">First Name</label>
+                                <input type="text" name="first_name" required class="w-full px-3.5 py-3 rounded-xl border border-brand-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all" placeholder="Sarah">
                             </div>
                             <div>
-                                <label class="block text-[9px] font-bold tracking-widest uppercase text-stone-500 mb-1.5">Last Name</label>
-                                <input type="text" name="last_name" required class="w-full px-3.5 py-3 rounded-xl border border-stone-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all" placeholder="Kovacs">
+                                <label class="block text-[9px] font-bold tracking-widest uppercase text-brand-muted mb-1.5">Last Name</label>
+                                <input type="text" name="last_name" required class="w-full px-3.5 py-3 rounded-xl border border-brand-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all" placeholder="Kovacs">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-[9px] font-bold tracking-widest uppercase text-stone-500 mb-1.5">Email Address</label>
-                            <input type="email" name="email" required class="w-full px-3.5 py-3 rounded-xl border border-stone-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all" placeholder="sarah.k@example.com">
+                            <label class="block text-[9px] font-bold tracking-widest uppercase text-brand-muted mb-1.5">Email Address</label>
+                            <input type="email" name="email" required class="w-full px-3.5 py-3 rounded-xl border border-brand-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all" placeholder="sarah.k@example.com">
                         </div>
                         <div>
-                            <label class="block text-[9px] font-bold tracking-widest uppercase text-stone-500 mb-1.5">Primary Relocation Topic</label>
-                            <select name="topic" class="w-full px-3.5 py-3 rounded-xl border border-stone-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all">
+                            <label class="block text-[9px] font-bold tracking-widest uppercase text-brand-muted mb-1.5">Relocation Topic</label>
+                            <select name="topic" class="w-full px-3.5 py-3 rounded-xl border border-brand-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all">
                                 <option value="Nomad Visa">Digital Nomad Pathways</option>
                                 <option value="Skilled Work">Skilled Work / Points Matrix</option>
                                 <option value="Study-to-work">Study Transitions & Postgrad Permits</option>
@@ -682,14 +663,13 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[9px] font-bold tracking-widest uppercase text-stone-500 mb-1.5">Your Scenario / Query Details</label>
-                            <textarea name="message" rows="3" required class="w-full px-3.5 py-3 rounded-xl border border-stone-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all resize-none" placeholder="Provide details regarding your current nationality, destination targets, and income profile..."></textarea>
+                            <label class="block text-[9px] font-bold tracking-widest uppercase text-brand-muted mb-1.5">Your Scenario / Query Details</label>
+                            <textarea name="message" rows="3" required class="w-full px-3.5 py-3 rounded-xl border border-brand-200 focus:border-brand-accent focus:ring-1 focus:ring-brand-accent outline-none bg-white text-xs md:text-sm transition-all resize-none" placeholder="Provide details regarding your current nationality, destination targets, and income profile..."></textarea>
                         </div>
                         
-                        <!-- Anti-spam protection for Formspree accounts -->
                         <input type="text" name="_gotcha" class="hidden">
                         
-                        <button type="submit" class="w-full bg-brand-500 text-white font-bold tracking-wider text-[10px] uppercase py-3.5 rounded-xl hover:bg-brand-accent transition-all duration-200 shadow-sm">
+                        <button type="submit" class="w-full bg-brand-900 text-white font-bold tracking-wider text-[10px] uppercase py-3.5 rounded-xl hover:bg-brand-accent transition-all duration-200 shadow-sm">
                             Submit Inquiry
                         </button>
                     </form>
@@ -699,8 +679,7 @@
         </div>
     </section>
 
-    <!-- Structural Footer -->
-    <footer class="bg-brand-500 text-stone-300 py-16 border-t border-stone-800">
+    <footer class="bg-brand-900 text-brand-200 py-16 border-t border-stone-850">
         <div class="container mx-auto px-4 md:px-8 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 
@@ -708,15 +687,15 @@
                     <a href="#" class="text-2xl font-bold tracking-tight text-white mb-4 block">
                         Factguide<span class="text-brand-accent font-serif italic">.</span>
                     </a>
-                    <p class="max-w-md text-xs md:text-sm leading-relaxed text-stone-400 mb-5 font-light">
-                        An independent database profiling visa schemes, legal tax brackets, and local registration checkpoints for digital nomads, international students, and global young professionals.
+                    <p class="max-w-md text-xs md:text-sm leading-relaxed text-brand-200 mb-5 font-light">
+                        An independent database profiling visa schemes, tax frameworks, and registration checkpoints for digital nomads, international students, and global young professionals.
                     </p>
-                    <p class="text-[10px] text-stone-500 font-medium">© 2026 Factguide. Built for mobile-first global mobility index scaling.</p>
+                    <p class="text-[10px] text-brand-200/60 font-medium">© 2026 Factguide. Tailored for mobile-first global mobility indexing.</p>
                 </div>
                 
                 <div>
                     <h4 class="text-white text-xs font-bold tracking-widest uppercase mb-4">Relocation Paths</h4>
-                    <ul class="space-y-2.5 text-xs md:text-sm text-stone-400">
+                    <ul class="space-y-2.5 text-xs md:text-sm text-brand-200/80">
                         <li><a href="#visa" class="hover:text-brand-accent transition-colors">Nomad Tax Schemes</a></li>
                         <li><a href="#visa" class="hover:text-brand-accent transition-colors">Skilled Sponsor Paths</a></li>
                         <li><a href="#visa" class="hover:text-brand-accent transition-colors">Working Holiday Matrix</a></li>
@@ -726,7 +705,7 @@
 
                 <div>
                     <h4 class="text-white text-xs font-bold tracking-widest uppercase mb-4">Legal & Support</h4>
-                    <ul class="space-y-2.5 text-xs md:text-sm text-stone-400">
+                    <ul class="space-y-2.5 text-xs md:text-sm text-brand-200/80">
                         <li><a href="#button" class="hover:text-brand-accent transition-colors">Privacy Policy</a></li>
                         <li><a href="#button" class="hover:text-brand-accent transition-colors">Terms of Service</a></li>
                         <li><a href="#button" class="hover:text-brand-accent transition-colors">Cookie Preferences</a></li>
@@ -735,8 +714,8 @@
                 </div>
             </div>
             
-            <div class="border-t border-stone-800/80 pt-6 text-center text-[10px] leading-relaxed text-stone-500 max-w-5xl mx-auto">
-                <p>Disclaimer: Factguide is an independent research publication and is not affiliated with any foreign consulate, state immigration office, or government department. Content provided does not constitute certified legal counsel or structured immigration advice. Visas and entry policies adjust dynamically; always verify travel criteria with respective foreign departments before booking flights.</p>
+            <div class="border-t border-slate-800 pt-6 text-center text-[10px] leading-relaxed text-brand-200/50 max-w-5xl mx-auto">
+                <p>Disclaimer: Factguide is an independent research platform and is not affiliated with any foreign consulate, state immigration office, or government department. Content provided does not constitute certified legal counsel or formal immigration advice. Visas and entry policies adjust dynamically; always verify travel criteria with respective foreign departments before booking flights.</p>
             </div>
         </div>
     </footer>
@@ -744,7 +723,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // Comprehensive, real 55 Country List mapped logically for both dropdowns and extensible searches
+            // All 55 requested country codes mapped precisely with elegant flags
             const countriesData = [
                 { name: "United Kingdom", flag: "🇬🇧" }, { name: "Australia", flag: "🇦🇺" }, { name: "Canada", flag: "🇨🇦" },
                 { name: "United States", flag: "🇺🇸" }, { name: "Germany", flag: "🇩🇪" }, { name: "Ireland", flag: "🇮🇪" },
@@ -767,21 +746,21 @@
                 { name: "Russia", flag: "🇷🇺" }
             ];
 
-            // Global Extensible Search Database - Suitable for adding any future page URLs perfectly
+            // Core Search Index (Designed to connect new URLs perfectly for future expansions)
             const searchIndex = [
-                { title: "United Kingdom — HPI Graduate Route & Visas", link: "#button", type: "country", tags: "uk, england, london, HPI, youth, graduate, student, sponsorship" },
-                { title: "Australia — Subclass 417 Working Holiday", link: "#button", type: "country", tags: "australia, sydney, WHV, subclass 417, holiday, youth, farming" },
-                { title: "Canada — Remote Work Exemption & Digital Nomad Entry", link: "#button", type: "country", tags: "canada, toronto, student, pgwp, work, remote, entry rules" },
-                { title: "United States — Visa-Free & J-1 Cultural Routes", link: "#button", type: "country", tags: "usa, united states, america, work, exchange, visa" },
-                { title: "Germany — Chancenkarte Job Seeker Points System", link: "#button", type: "country", tags: "germany, berlin, points, job seeker, chancenkarte, blocked account" },
-                { title: "Spain — Digital Nomad Visa & Beckham Law Allowances", link: "#button", type: "country", tags: "spain, madrid, barcelona, nomad, tax, beckham, income" },
-                { title: "Portugal — D8 Nomad Visa & Residency Requirements", link: "#button", type: "country", tags: "portugal, lisbon, nomad, residency, d8, nif" },
-                { title: "Japan — Activities Nomad Program & Remote Criteria", link: "#button", type: "country", tags: "japan, tokyo, nomad, remote, work, income limit" },
-                { title: "Schengen Area — EES Biometric Border Launch Updates", link: "#news", type: "alert", tags: "europe, schengen, border, ees, biometrics, passport, stamps" },
-                { title: "Schengen Area — EU Visa Rejection Analysis & Statistics", link: "#news", type: "alert", tags: "schengen, rejections, malta, belgium, approval rates, consulates" }
+                { title: "United Kingdom — HPI Graduate Route & Visas", link: "#button", type: "country", tags: "uk, england, london, hpi, youth, graduate, student, sponsorship" },
+                { title: "Australia — Subclass 417 Working Holiday Guidelines", link: "#button", type: "country", tags: "australia, sydney, whv, subclass 417, holiday, youth, farming" },
+                { title: "Canada — Remote Work Exemption & Nomad Protocols", link: "#button", type: "country", tags: "canada, toronto, student, pgwp, work, remote, entry rules" },
+                { title: "United States — Visa Waiver Program & J-1 Exchange", link: "#button", type: "country", tags: "usa, united states, america, work, exchange, visa" },
+                { title: "Germany — Chancenkarte Job Seeker Points Matrix", link: "#button", type: "country", tags: "germany, berlin, points, job seeker, chancenkarte, blocked account" },
+                { title: "Spain — Digital Nomad Visa & Beckham Law Provisions", link: "#button", type: "country", tags: "spain, madrid, barcelona, nomad, tax, beckham, income" },
+                { title: "Portugal — D8 Nomad Scheme & Tax Assessment Rules", link: "#button", type: "country", tags: "portugal, lisbon, nomad, residency, d8, nif" },
+                { title: "Japan — Co-working Activities Nomad Visa Rules", link: "#button", type: "country", tags: "japan, tokyo, nomad, remote, work, income limit" },
+                { title: "Schengen Area — EES Biometric Border Tracking", link: "#news", type: "alert", tags: "europe, schengen, border, ees, biometrics, passport, stamps" },
+                { title: "Schengen Area — Consolidated Visa Refusal Audits", link: "#news", type: "alert", tags: "schengen, rejections, malta, belgium, approval rates, consulates" }
             ];
 
-            // Load Countries dynamically into the mobile search panel for responsive speed
+            // Render Mobile Country Drawer Elements
             const mobileCountryList = document.getElementById('mobile-country-list');
             
             function renderMobileCountries(filterQuery = "") {
@@ -791,9 +770,8 @@
                 filtered.forEach(c => {
                     const el = document.createElement('a');
                     el.href = "#button";
-                    el.className = "flex items-center gap-2 p-2 hover:bg-stone-100 rounded-lg transition-colors";
+                    el.className = "flex items-center gap-2 p-2 hover:bg-brand-100 rounded-lg transition-colors";
                     el.innerHTML = `<span class="text-sm">${c.flag}</span> <span class="truncate">${c.name}</span>`;
-                    // Close mobile navigation menu on click
                     el.addEventListener('click', () => {
                         closeMobileNav();
                     });
@@ -802,25 +780,24 @@
             }
             renderMobileCountries();
 
-            // Handle typing filtration in Mobile Countries Directory
             const mobileCountrySearch = document.getElementById('mobile-country-search');
             mobileCountrySearch.addEventListener('input', (e) => {
                 renderMobileCountries(e.target.value);
             });
 
-            // --- HEADER SCROLL ACTION ---
+            // Navigation bar transition on scroll
             const header = document.getElementById('main-header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 30) {
                     header.classList.add('glass-nav', 'py-3');
-                    header.classList.remove('bg-transparent', 'py-5');
+                    header.classList.remove('py-5');
                 } else {
                     header.classList.remove('glass-nav', 'py-3');
-                    header.classList.add('bg-transparent', 'py-5');
+                    header.classList.add('py-5');
                 }
             });
 
-            // --- MOBILE MENU BEHAVIOR ---
+            // Mobile menu drawer behavior
             const mobileToggle = document.getElementById('mobile-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -852,7 +829,7 @@
                 });
             });
 
-            // Mobile Accordion Toggle for Countries Directory
+            // Country accordion inside mobile menu
             const mobileAccordionBtn = document.getElementById('mobile-accordion-toggle');
             const mobileCountriesDropdown = document.getElementById('mobile-countries-dropdown');
             mobileAccordionBtn.addEventListener('click', () => {
@@ -860,12 +837,12 @@
                     mobileCountriesDropdown.style.maxHeight = null;
                     mobileAccordionBtn.querySelector('span').innerText = '+';
                 } else {
-                    mobileCountriesDropdown.style.maxHeight = "360px";
+                    mobileCountriesDropdown.style.maxHeight = "320px";
                     mobileAccordionBtn.querySelector('span').innerText = '-';
                 }
             });
 
-            // --- CORE DYNAMIC SEARCH ENGINE ---
+            // Core search engine matching
             const searchInput = document.getElementById('global-search-input');
             const searchResults = document.getElementById('search-results');
             const searchResultsList = document.getElementById('search-results-list');
@@ -878,7 +855,6 @@
                     return;
                 }
 
-                // Match against titles or internal tags
                 const matches = searchIndex.filter(item => 
                     item.title.toLowerCase().includes(query) || 
                     item.tags.toLowerCase().includes(query)
@@ -887,7 +863,6 @@
                 renderSearchResults(matches);
             });
 
-            // Close directory matching dropdown if clicked outside search zone
             document.addEventListener('click', (e) => {
                 if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                     searchResults.classList.add('hidden');
@@ -897,7 +872,7 @@
             function renderSearchResults(results) {
                 searchResultsList.innerHTML = '';
                 if (results.length === 0) {
-                    searchResultsList.innerHTML = `<div class="text-xs text-stone-400 p-2.5 italic">No exact policy tracks found. Check other parameters or contact us.</div>`;
+                    searchResultsList.innerHTML = `<div class="text-xs text-brand-muted p-2.5 italic">No matching policy tracks found. Try checking parameters or search Spain / UK.</div>`;
                     searchResults.classList.remove('hidden');
                     return;
                 }
@@ -905,13 +880,13 @@
                 results.forEach(item => {
                     const row = document.createElement('a');
                     row.href = item.link;
-                    row.className = "flex items-center justify-between p-2.5 rounded-lg hover:bg-stone-50 transition-colors text-xs md:text-sm text-brand-500 font-medium cursor-pointer border border-transparent hover:border-stone-100";
+                    row.className = "flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-50 transition-colors text-xs md:text-sm text-brand-900 font-semibold cursor-pointer border border-transparent hover:border-brand-200";
                     row.innerHTML = `
                         <span class="flex items-center gap-2 truncate">
-                            <span class="text-[8px] font-bold text-stone-400 uppercase tracking-wider px-1 py-0.5 border border-stone-200 rounded bg-stone-50">${item.type}</span>
+                            <span class="text-[8px] font-bold text-brand-accent uppercase tracking-wider px-1.5 py-0.5 border border-brand-200 rounded-lg bg-brand-100">${item.type}</span>
                             <span class="truncate">${item.title}</span>
                         </span>
-                        <span class="text-stone-300 text-xs">→</span>
+                        <span class="text-brand-accent text-xs">→</span>
                     `;
                     row.addEventListener('click', () => {
                         searchResults.classList.add('hidden');
@@ -922,7 +897,6 @@
                 searchResults.classList.remove('hidden');
             }
 
-            // Fallback action button to smooth-navigate to direct category matches
             searchBtn.addEventListener('click', () => {
                 const query = searchInput.value.trim();
                 if (query.length > 0) {
@@ -933,14 +907,14 @@
                     if (match) {
                         window.location.href = match.link;
                     } else {
-                        showToast(`Matching metrics for "${query}" not found. Select Country Directory options instead.`);
+                        showToast(`No exact match for "${query}". Try looking up "Germany" or "Spain".`);
                     }
                 }
             });
 
         });
 
-        // --- VISA CATEGORY FILTERING ---
+        // Visa category layout filters
         function filterVisas(category) {
             const cards = document.querySelectorAll('.visa-card');
             const buttons = ['all', 'nomad', 'work', 'holiday'];
@@ -948,25 +922,25 @@
             buttons.forEach(btn => {
                 const btnEl = document.getElementById(`tab-${btn}`);
                 if (btn === category) {
-                    btnEl.classList.add('text-brand-500', 'border-brand-500');
-                    btnEl.classList.remove('text-stone-400');
+                    btnEl.classList.add('text-brand-accent', 'border-brand-accent');
+                    btnEl.classList.remove('text-brand-muted');
                 } else {
-                    btnEl.classList.remove('text-brand-500', 'border-brand-500');
-                    btnEl.classList.add('text-stone-400');
+                    btnEl.classList.remove('text-brand-accent', 'border-brand-accent');
+                    btnEl.classList.add('text-brand-muted');
                 }
             });
 
             cards.forEach(card => {
                 const cardCat = card.getAttribute('data-category');
                 if (category === 'all' || cardCat === category) {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
 
-        // --- PROFILE ASSESSMENT INTERACTIVE LOGIC ---
+        // Assessment wizard calculation
         function runCheck(profile) {
             const resultBox = document.getElementById('quick-check-result');
             const resultText = document.getElementById('quick-check-text');
@@ -977,21 +951,21 @@
             
             let advice = "";
             if (profile === 'graduate') {
-                advice = "🎓 <strong>Match Recommendation: UK High Potential Individual (HPI) or Germany's Chancenkarte.</strong> Your recent degree is highly valued. If your alma mater is within the global top 50, the UK HPI avoids employer sponsorship barriers entirely. Otherwise, Germany's points program lets you search for jobs in Germany for up to a year.";
+                advice = "🎓 <strong>Match recommendation: UK High Potential Individual (HPI) or Germany's Chancenkarte.</strong> If your university is ranked in the global top 50, you qualify for the UK's sponsor-free work permit. Otherwise, Germany's points program permits direct on-the-ground job search.";
             } else if (profile === 'remote') {
-                advice = "💻 <strong>Match Recommendation: Spain or Portugal Digital Nomad Programs.</strong> Spain offers reduced taxation limits under Beckham Law adaptations for foreign remote earnings starting at €2,640/month. Portugal features residency stability via D8 structures for income above €3,280/month.";
+                advice = "💻 <strong>Match recommendation: Spain or Portugal Nomad programs.</strong> Spain offers reduced taxation levels (flat 24% tax caps) via Beckham Law. Portugal grants residency security through the D8 scheme for stable remote income.";
             } else if (profile === 'youth') {
-                advice = "🎒 <strong>Match Recommendation: Australia Working Holiday (subclass 417).</strong> Excellent for travelers seeking flexible travel. Recent rules allow citizens of selected nations to live and work down under up to age 35 without regional/rural farming work demands.";
+                advice = "🎒 <strong>Match recommendation: Australia Subclass 417 Working Holiday.</strong> Select partner nationalities aged 18 to 35 can legally reside and work Down Under with fewer regional agricultural duties.";
             }
 
             resultText.innerHTML = advice;
             resultBox.classList.remove('hidden');
         }
 
-        // --- PREMIUM TOAST NOTIFICATION DRAWER ---
+        // Notification toast drawer
         function showToast(message) {
             const toast = document.createElement('div');
-            toast.className = "fixed bottom-4 right-4 bg-stone-900 text-white text-xs py-3 px-4 rounded-xl shadow-2xl z-50 transition-all duration-300 transform translate-y-10 opacity-0 flex items-center gap-2 border border-stone-800 font-sans";
+            toast.className = "fixed bottom-4 right-4 bg-brand-900 text-white text-xs py-3 px-4 rounded-xl shadow-2xl z-50 transition-all duration-300 transform translate-y-10 opacity-0 flex items-center gap-2 border border-slate-800 font-sans";
             toast.innerHTML = `<i class="fa-solid fa-circle-info text-brand-accent"></i> ${message}`;
             document.body.appendChild(toast);
             
