@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Policy Updates — Factguide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { brand: { 50: '#FDFBF7', 900: '#111827', accent: '#B25A38', muted: '#4B5563' } } } } }
+    </script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased">
+
+    <header class="fixed w-full top-0 z-50 bg-brand-50/95 backdrop-blur-md border-b border-brand-900/5 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight">Factguide<span class="text-brand-accent font-serif italic">.</span></a>
+            <nav class="flex gap-6 text-[10px] uppercase font-bold tracking-widest text-brand-muted">
+                <a href="index.html" class="hover:text-brand-accent">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 container mx-auto px-6 max-w-4xl">
+        <h1 class="text-4xl md:text-5xl font-serif mb-16 text-center">Global Mobility Intelligence</h1>
+
+        <div class="space-y-20">
+            <!-- Article 1: Canada -->
+            <article>
+                <div class="mb-8 h-80 rounded-3xl overflow-hidden bg-brand-200">
+                    <img src="https://csg-erc.org/wp-content/uploads/2021/12/AdobeStock_446797680_Editorial_Use_Only-scaled-e1639586823573.jpeg" alt="Canada Border" class="w-full h-full object-cover">
+                </div>
+                <div class="px-2">
+                    <span class="text-[9px] font-bold text-brand-accent uppercase tracking-widest border border-brand-accent px-2 py-1 rounded">Policy Shift</span>
+                    <h2 class="text-3xl font-serif my-4">IRCC Tightens Canada's Remote Work Exemptions</h2>
+                    <p class="text-brand-muted leading-relaxed mb-6 text-lg">Canada's Immigration, Refugees and Citizenship Canada (IRCC) has finalized a pivot in its handling of digital nomads entering the country as temporary visitors. New operational bulletins mandate that immigration officers scrutinize the source of an applicant's income more rigorously. The primary concern is preventing the "creeping labor participation" of remote workers who may be leveraging tourist status to perform work that affects the domestic labor market. Applicants are now strongly advised to carry proof of foreign employment, corporate certification, and an explicit itinerary that confirms their intent to reside temporarily without seeking Canadian employer sponsorship.</p>
+                    <a href="https://www.cicnews.com/" target="_blank" class="text-xs font-bold uppercase tracking-widest hover:text-brand-accent transition-colors underline underline-offset-4">Read Full Analysis on CIC News →</a>
+                </div>
+            </article>
+
+            <!-- Article 2: EES -->
+            <article>
+                <div class="mb-8 h-80 rounded-3xl overflow-hidden bg-brand-200">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="European border" class="w-full h-full object-cover">
+                </div>
+                <div class="px-2">
+                    <span class="text-[9px] font-bold text-brand-accent uppercase tracking-widest border border-brand-accent px-2 py-1 rounded">Border Tech</span>
+                    <h2 class="text-3xl font-serif my-4">EES Biometric System: Operational Reality</h2>
+                    <p class="text-brand-muted leading-relaxed mb-6 text-lg">The European Union has moved beyond the pilot phase of the Entry/Exit System (EES), fully replacing the manual passport stamp for non-EU travelers. This automated digital system captures facial images and fingerprints upon entry to the Schengen Area, creating a consolidated log of every crossing. While the system is designed to accelerate border throughput long-term, the initial transition has caused significant processing bottlenecks at major aviation and rail hubs, notably in Frankfurt and Madrid. Travelers should expect a one-time "registration delay" on their first visit, as biometrics must be recorded in the centralized security database.</p>
+                    <a href="https://www.consilium.europa.eu/en/policies/eu-travel-systems/" target="_blank" class="text-xs font-bold uppercase tracking-widest hover:text-brand-accent transition-colors underline underline-offset-4">Read Full Policy Details on EU Official Portal →</a>
+                </div>
+            </article>
+
+            <!-- Article 3: Japan -->
+            <article>
+                <div class="mb-8 h-80 rounded-3xl overflow-hidden bg-brand-200">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1200&auto=format&fit=crop" alt="Japan Cityscape" class="w-full h-full object-cover">
+                </div>
+                <div class="px-2">
+                    <span class="text-[9px] font-bold text-brand-accent uppercase tracking-widest border border-brand-accent px-2 py-1 rounded">Visa Update</span>
+                    <h2 class="text-3xl font-serif my-4">Japan Launches Targeted Nomad Program</h2>
+                    <p class="text-brand-muted leading-relaxed mb-6 text-lg">Japan has officially opened its highly anticipated digital nomad visa program, positioning itself as a premier destination for high-earning remote professionals. The visa allows for a six-month stay, specifically targeting individuals with an annual income exceeding ¥10 million (approx. $65,000+ USD). Unlike standard tourist permits, this program offers a clear legal framework for residing in Japan without being tied to a local employer, provided the remote work remains purely digital. The government is using this initiative to attract global tech talent to Tokyo and Fukuoka's burgeoning startup ecosystems.</p>
+                    <a href="https://visaguide.world/news/japan-launches-digital-nomad-visa-program/" target="_blank" class="text-xs font-bold uppercase tracking-widest hover:text-brand-accent transition-colors underline underline-offset-4">Read Full Analysis on VisaGuide →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="py-12 bg-brand-900 text-brand-200 text-center text-[10px] uppercase tracking-widest">
+        <p>© 2026 Factguide. Independent Policy Research.</p>
+    </footer>
+
+</body>
+</html>
