@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Factguide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { brand: { 50: '#FDFBF7', 900: '#111827', accent: '#B25A38', muted: '#4B5563' } } } } }
+    </script>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased pt-20">
+
+    <header class="fixed w-full top-0 z-50 bg-brand-50/95 backdrop-blur-md border-b border-brand-900/5 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight">Factguide<span class="text-brand-accent font-serif italic">.</span></a>
+            <nav class="flex gap-6 text-[10px] uppercase font-bold tracking-widest text-brand-muted">
+                <a href="index.html" class="hover:text-brand-accent">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 max-w-5xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Left Side: Information -->
+            <div>
+                <h1 class="text-4xl font-serif mb-6">Get in Touch</h1>
+                <p class="text-brand-muted mb-12 text-sm leading-relaxed">
+                    Have a specific question about visa requirements, relocation policies, or editorial inquiries? Our research team is available to assist you. Please fill out the form or reach out through our official channels.
+                </p>
+
+                <div class="space-y-8">
+                    <!-- HQ Address -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-900 text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-location-dot text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-[10px] uppercase font-bold tracking-widest mb-1">Global Headquarters</h3>
+                            <p class="text-brand-muted text-sm">404 Alabaster Boulevard<br>Lisbon, Portugal</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-900 text-white flex items-center justify-center flex-shrink-0">
+                            <i class="fa-regular fa-envelope text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-[10px] uppercase font-bold tracking-widest mb-1">Email Desk</h3>
+                            <p class="text-brand-muted text-sm">intel@factguide.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Socials -->
+                    <div class="flex items-center gap-4 pt-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-brand-900/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all">
+                            <i class="fa-brands fa-x-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-brand-900/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-brand-900/10 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="bg-white p-8 rounded-2xl border border-brand-900/5 shadow-sm">
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold mb-2 tracking-widest">Full Name</label>
+                        <input type="text" name="name" required class="w-full bg-brand-50 border border-brand-900/10 p-3 focus:border-brand-accent outline-none transition-all rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold mb-2 tracking-widest">Email Address</label>
+                        <input type="email" name="email" required class="w-full bg-brand-50 border border-brand-900/10 p-3 focus:border-brand-accent outline-none transition-all rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold mb-2 tracking-widest">Inquiry Topic</label>
+                        <select name="topic" class="w-full bg-brand-50 border border-brand-900/10 p-3 focus:border-brand-accent outline-none transition-all rounded-lg">
+                            <option>Visa Application</option>
+                            <option>Relocation Policy</option>
+                            <option>Editorial Query</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold mb-2 tracking-widest">Message</label>
+                        <textarea name="message" rows="5" required class="w-full bg-brand-50 border border-brand-900/10 p-3 focus:border-brand-accent outline-none transition-all rounded-lg"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-900 text-white py-4 text-[10px] uppercase font-bold tracking-widest hover:bg-brand-accent transition-colors rounded-lg">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
